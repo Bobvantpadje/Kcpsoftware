@@ -1,0 +1,14 @@
+@import "variables";
+
+.service-container{
+    height: 1000px;
+
+    .service-header{        
+        padding-top: 75px;
+        text-align: center;
+        font-size: 30px;;
+        width: 20%;
+        margin: 0 auto;
+        border-bottom: 1px solid $secondary-color;
+    }
+}

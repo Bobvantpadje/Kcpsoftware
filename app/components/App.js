@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { styles } from '../style/app.scss'
 import Home from './Home'
 import About from './About'
+import Services from './Services'
 import Scroll from 'react-scroll'
 //import Link from 'react-scroll'
 
@@ -14,27 +15,27 @@ var scroll = Scroll.animateScroll;
 var scrollSpy = Scroll.scrollSpy;
 
 class App extends Component {
-    componentDidMount() {
+    // componentDidMount() {
 
-        Events.scrollEvent.register('begin', function () {
-            console.log("begin", arguments);
-        });
+    //     Events.scrollEvent.register('begin', function () {
+    //         console.log("begin", arguments);
+    //     });
 
-        Events.scrollEvent.register('end', function () {
-            console.log("end", arguments);
-        });
+    //     Events.scrollEvent.register('end', function () {
+    //         console.log("end", arguments);
+    //     });
 
-        scrollSpy.update();
+    //     scrollSpy.update();
 
-    }
-    scrollToTop() {
-        scroll.scrollToTop();
-    }
+    // }
+    // scrollToTop() {
+    //     scroll.scrollToTop();
+    // }
 
-    componentWillUnmount() {
-        Events.scrollEvent.remove('begin');
-        Events.scrollEvent.remove('end');
-    }
+    // componentWillUnmount() {
+    //     Events.scrollEvent.remove('begin');
+    //     Events.scrollEvent.remove('end');
+    // }
 
     render() {
         return (
@@ -42,8 +43,9 @@ class App extends Component {
                 <div className="header">
                     <div className="companyName">KCPSoftware</div>
                     <ul>
-                        <li><Link activeClass="active" to="home" spy={true} smooth={true} duration={500} >Test 1</Link></li>
-                        <li><Link activeClass="active" to="about" spy={true} smooth={true} duration={500}>Test 2</Link></li>
+                        <li><Link activeClass="active" to="home" spy={true} smooth={true} duration={500} >Home</Link></li>
+                        <li><Link activeClass="active" to="about" spy={true} smooth={true} duration={500}>About</Link></li>                        
+                        <li><Link activeClass="active" to="services" spy={true} smooth={true} duration={500}>Services</Link></li>
                     </ul>
                 </div>
                 <Element name="home">
@@ -51,6 +53,9 @@ class App extends Component {
                 </Element>
                 <Element name="about">
                     <About></About>
+                </Element>
+                <Element name="services">
+                    <Services></Services>
                 </Element>
             </div>
         );
